@@ -122,6 +122,75 @@ img {
 /*===== NEWSLETTER =====*/
 
 
+/*===== CHECKOUT =====*/
+.checkout {
+  background-color: var(--gray-color);
+}
+
+.checkout__container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  font-size: var(--h1-font-size);
+  color: var(--dark-color);
+  text-align: center;
+  margin-bottom: var(--mb-4);
+}
+
+.checkout__content {
+  background-color: var(--white-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.checkout__form h3 {
+  font-size: var(--h2-font-size);
+  color: var(--dark-color);
+  margin-bottom: var(--mb-3);
+}
+
+.checkout__item {
+  margin-bottom: var(--mb-3);
+}
+
+.checkout__item label {
+  display: block;
+  font-weight: var(--font-semi);
+  margin-bottom: var(--mb-1);
+  color: var(--dark-color);
+}
+
+.checkout__item input,
+.checkout__item select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+  transition: border-color 0.3s;
+}
+
+.checkout__item input:focus,
+.checkout__item select:focus {
+  outline: none;
+  border-color: var(--second-color);
+}
+
+#paypal-button-container {
+  margin-top: var(--mb-3);
+}
+
+#checkout-message {
+  margin-top: var(--mb-2);
+  font-size: var(--normal-font-size);
+  text-align: center;
+}
+
 /*===== SPONSORS =====*/
 
 
