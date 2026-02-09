@@ -57,6 +57,12 @@ PAYPAL_MODE=sandbox
 PORT=3000
 ```
 
+**Important:** Also update the PayPal Client ID in `index.html`:
+- Open `index.html`
+- Find the PayPal SDK script tag (around line 16)
+- Replace `?client-id=test` with `?client-id=YOUR_CLIENT_ID`
+- Example: `<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>`
+
 ### 3. Install Dependencies
 
 ```bash
@@ -166,11 +172,16 @@ Click "Create Web Service" and wait for deployment.
 
 ### 4. Update Frontend
 
-After deployment, update the `API_BASE_URL` in your frontend code (in `index.html` or `assets/js/main.js`) to point to your Render URL:
+After backend deployment, you need to update two things in your frontend:
 
-```javascript
-const API_BASE_URL = 'https://your-app-name.onrender.com';
-```
+1. **Update API URL** in `assets/js/paypal.js`:
+   - Change `const API_BASE_URL = 'http://localhost:3000'` 
+   - To `const API_BASE_URL = 'https://your-app-name.onrender.com'`
+
+2. **Update PayPal Client ID** in `index.html`:
+   - Find the PayPal SDK script tag
+   - Replace `?client-id=test` with your actual PayPal Client ID
+   - Example: `<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>`
 
 ### 5. Deploy Frontend
 
