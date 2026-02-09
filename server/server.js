@@ -17,6 +17,8 @@ const PAYPAL_API_BASE = PAYPAL_MODE === 'live'
   : 'https://api-m.sandbox.paypal.com';
 
 // Middleware
+// CORS: In production, configure to allow only your frontend domain
+// Example: app.use(cors({ origin: 'https://yourdomain.com' }));
 app.use(cors());
 app.use(express.json());
 
@@ -144,12 +146,6 @@ app.post('/api/orders/create', async (req, res) => {
 app.post('/api/orders/:orderID/capture', async (req, res) => {
   try {
     const { orderID } = req.params;
-    
-    if (!orderID) {
-      return res.status(400).json({
-        error: 'Order ID is required'
-      });
-    }
 
     // Get access token
     const accessToken = await getPayPalAccessToken();

@@ -1,6 +1,8 @@
 // PayPal Checkout Integration
 // Configure your backend API URL
-const API_BASE_URL = 'http://localhost:3000'; // Change this to your Render URL in production
+// For local development: http://localhost:3000
+// For production: https://your-app-name.onrender.com (use HTTPS)
+const API_BASE_URL = 'http://localhost:3000'; // Change this to your production URL
 
 // Show message to user
 function showMessage(message, isError = false) {
