@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="assets/css/styles.css">
 
         <title>Responsive Ecommerce Website</title>
+        
+        <!-- PayPal SDK -->
+        <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -49,6 +52,35 @@
                 
             </section>
 
+            <!--===== CHECKOUT =====-->
+            <section class="checkout section" id="checkout">
+                <div class="checkout__container">
+                    <h2 class="section-title">Checkout</h2>
+                    <div class="checkout__content">
+                        <div class="checkout__form">
+                            <h3>Order Summary</h3>
+                            <div class="checkout__item">
+                                <label for="amount">Amount (USD):</label>
+                                <input type="number" id="amount" value="29.99" min="0.01" step="0.01" />
+                            </div>
+                            <div class="checkout__item">
+                                <label for="currency">Currency:</label>
+                                <select id="currency">
+                                    <option value="USD" selected>USD</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="CAD">CAD</option>
+                                    <option value="AUD">AUD</option>
+                                    <option value="JPY">JPY</option>
+                                </select>
+                            </div>
+                            <div id="paypal-button-container"></div>
+                            <div id="checkout-message"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!--===== SPONSORS =====-->
             <section class="sponsors section">
                 
@@ -62,5 +94,8 @@
 
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
+        
+        <!--===== PAYPAL JS =====-->
+        <script src="assets/js/paypal.js"></script>
     </body>
 </html>

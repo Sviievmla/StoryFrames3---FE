@@ -1,0 +1,14 @@
+{
+  "name": "storyframes3",
+  "version": "1.0.0",
+  "description": "Ecommerce website with PayPal checkout",
+  "scripts": {
+    "install-server": "cd server && npm install",
+    "start-server": "cd server && npm start",
+    "dev-server": "cd server && npm run dev",
+    "start": "npm run start-server"
+  },
+  "keywords": ["ecommerce", "paypal", "checkout"],
+  "author": "",
+  "license": "ISC"
+}
