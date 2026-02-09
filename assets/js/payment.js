@@ -37,6 +37,8 @@ function initPayPalButton() {
                         amount: amount,
                         currency: currency
                     })
+                }).catch(error => {
+                    throw new Error('Cannot connect to payment server. Please ensure the backend is running.');
                 });
 
                 const orderData = await response.json();
@@ -66,6 +68,8 @@ function initPayPalButton() {
                     headers: {
                         'Content-Type': 'application/json'
                     }
+                }).catch(error => {
+                    throw new Error('Cannot connect to payment server. Please ensure the backend is running.');
                 });
 
                 const captureData = await response.json();

@@ -7,6 +7,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { client } = require('./paypal-client');
+const { SUPPORTED_CURRENCIES } = require('./config');
 const checkoutNodeJssdk = require('@paypal/checkout-server-sdk');
 
 const app = express();
@@ -50,10 +51,9 @@ app.post('/api/orders', async (req, res) => {
     }
 
     // Validate currency code (ISO 4217)
-    const validCurrencies = ['USD', 'EUR', 'GBP', 'CAD', 'AUD', 'JPY'];
-    if (!validCurrencies.includes(currency.toUpperCase())) {
+    if (!SUPPORTED_CURRENCIES.includes(currency.toUpperCase())) {
       return res.status(400).json({ 
-        error: `Invalid currency: must be one of ${validCurrencies.join(', ')}` 
+        error: `Invalid currency: must be one of ${SUPPORTED_CURRENCIES.join(', ')}` 
       });
     }
 
