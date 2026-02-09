@@ -53,6 +53,36 @@
             <section class="sponsors section">
                 
             </section>
+
+            <!--===== CHECKOUT =====-->
+            <section class="checkout section" id="checkout">
+                <div class="checkout__container bd-grid">
+                    <h2 class="section-title">Checkout</h2>
+                    
+                    <div class="checkout__content">
+                        <div class="checkout__form">
+                            <h3>Order Summary</h3>
+                            <div class="checkout__item">
+                                <label for="amount">Amount (USD):</label>
+                                <input type="number" id="amount" class="checkout__input" value="29.99" min="0.01" step="0.01" required>
+                            </div>
+                            <div class="checkout__item">
+                                <label for="currency">Currency:</label>
+                                <select id="currency" class="checkout__input">
+                                    <option value="USD">USD - US Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - British Pound</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                </select>
+                            </div>
+                            <div id="paypal-button-container"></div>
+                            <div id="payment-message" class="payment-message"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <!--===== FOOTER =====-->
@@ -60,7 +90,21 @@
             
         </footer>
 
+        <!--===== PayPal SDK =====-->
+        <!-- IMPORTANT: Replace YOUR_PAYPAL_CLIENT_ID with your actual PayPal Client ID -->
+        <!-- Get your Client ID from: https://developer.paypal.com/dashboard/ -->
+        <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+        
+        <!--===== Payment Configuration =====-->
+        <script>
+            // Configure your backend API URL
+            // For local development: http://localhost:3000
+            // For Render deployment: https://your-backend-service.onrender.com
+            const API_URL = 'http://localhost:3000';
+        </script>
+
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/payment.js"></script>
     </body>
 </html>
